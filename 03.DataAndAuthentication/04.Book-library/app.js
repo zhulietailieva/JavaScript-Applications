@@ -5,7 +5,6 @@ const loadBtn=document.getElementById('loadBooks')
 let tBodyEl=document.getElementsByTagName('tbody')[0];
 
 async function loadBooks(){
-    //clear the table
     tBodyEl.innerHTML="";
  const response=await fetch(initUrl);
         const data=await response.json();
@@ -40,8 +39,6 @@ async function loadBooks(){
 }
 
 async function editBook(e){
-    //TO-DO: Implement functionality
-
     formEl.children[0].textContent='Edit FORM';
    console.log(e.target.parentElement
     .parentElement.children[1].textContent);
