@@ -4,15 +4,34 @@ const formEl=document.getElementById('form');
 const tableEl=document.getElementById('results');
 
 async function getStudents(){
+    tableEl.children[1].innerHTML='';
     let response=await fetch(initUrl);
     let data=await response.json();
 for (const student of Object.values(data)) {
-    console.log(student);
+   // console.log(student);
     let fName=student.firstName;
     let lName=student.lastName;
     let facultyNumber=student.facultyNumber;
     let grade=student.grade;
     let id=student._id;
+    
+    let trStudent=document.createElement('tr');
+    
+    let tdFName=document.createElement('td');
+    tdFName.textContent=fName;
+    let tdLName=document.createElement('td');
+    tdLName.textContent=lName;
+    let tdFNumber=document.createElement('td');
+    tdFNumber.textContent=facultyNumber;
+    let tdGrade=document.createElement('td');
+    tdGrade.textContent=grade; 
+
+    trStudent.appendChild(tdFName);
+    trStudent.appendChild(tdLName);
+    trStudent.appendChild(tdFNumber);
+    trStudent.appendChild(tdGrade);
+
+    tableEl.children[1].appendChild(trStudent);
 }
 
 }
@@ -33,5 +52,7 @@ await fetch(initUrl,{
     },
     body:JSON.stringify(studentObj)
 })
+getStudents();
 //clear inp fields
+formEl.reset();
 })
