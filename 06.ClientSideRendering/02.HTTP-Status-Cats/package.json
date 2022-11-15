@@ -1,7 +1,6 @@
 {
   "name": "02.http-status-cats",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "directories": {
     "test": "tests"
@@ -10,5 +9,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "lit-html": "^2.4.0"
+  }
 }
