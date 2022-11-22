@@ -1,3 +1,3 @@
-import * as api from '../api/api.js';
+import * as api from '../api/users.js';
 
-window.api=api;
+window.api = api;
