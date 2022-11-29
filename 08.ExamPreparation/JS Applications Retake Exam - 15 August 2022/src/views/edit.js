@@ -12,42 +12,42 @@ const editTemplate = (item,onEdit) => html`
                 name="brand"
                 id="shoe-brand"
                 placeholder="Brand"
-                value="${item.brand}"
+                value=${item.brand}
               />
               <input
                 type="text"
                 name="model"
                 id="shoe-model"
                 placeholder="Model"
-                value="${item.model}"
+                value=${item.model}
               />
               <input
                 type="text"
                 name="imageUrl"
                 id="shoe-img"
                 placeholder="Image url"
-                value="${item.imageUrl}"
+                value=${item.imageUrl}
               />
               <input
                 type="text"
                 name="release"
                 id="shoe-release"
                 placeholder="Release date"
-                value="${item.release}"
+                value=${item.release}
               />
               <input
                 type="text"
                 name="designer"
                 id="shoe-designer"
                 placeholder="Designer"
-                value="${item.designer}"
+                value=${item.designer}
               />
               <input
                 type="text"
                 name="value"
                 id="shoe-value"
                 placeholder="Value"
-                value="${item.value}"
+                value=${item.value}
               />
 
               <button type="submit">post</button>

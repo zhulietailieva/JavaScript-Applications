@@ -19,3 +19,7 @@ export async function createItem(itemData){
 export async function editItem(id,itemData){
     return put('/data/shoes/'+id,itemData);
 }
+
+export async function filter(query) {
+    return get(`/data/shoes?where=brand%20LIKE%20%22${query}%22`);
+}

@@ -446,7 +446,7 @@ describe("E2E tests", function () {
       expect(await page.isVisible('text="Edit"')).to.be.true;
     });
 
-    it.only("Edit should populate form with correct data [ 2.5 Points ]", async () => {
+    it("Edit should populate form with correct data [ 2.5 Points ]", async () => {
       const data = mockData.catalog[0];
       const user = mockData.users[0];
       const { get } = await handle(endpoints.details(data._id));
@@ -469,8 +469,6 @@ describe("E2E tests", function () {
       const inputs = await page.$$eval(".form .edit-form input", (t) =>
         t.map((i) => i.value)
       );
-      console.log(inputs[0]);
-      console.log(data.brand);
       expect(inputs[0]).to.contains(data.brand);
       expect(inputs[1]).to.contains(data.model);
       expect(inputs[2]).to.contains(data.imageUrl);
