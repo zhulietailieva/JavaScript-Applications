@@ -1,19 +1,25 @@
 import { render, page } from "./lib.js";
 import { getUserData } from "./util.js";
+import { showCatalog } from "./views/catalog.js";
+import { showCreate } from "./views/create.js";
+import { showDetails } from "./views/details.js";
+import { showEdit } from "./views/edit.js";
 import { showHome } from "./views/home.js";
+import { showLogin } from "./views/login.js";
 import { updateNav } from "./views/nav.js";
+import { showRegister } from "./views/register.js";
 
 const main = document.getElementById('wrapper').children[1];
 
 page(decorateContext);
 page('/', showHome);
-page('/catalog', () => console.log('catalog'));
-page('/catalog/:id', () => console.log('details'));
-page('/edit/:id', () => console.log('edit'));
-page('/create', () => console.log('create'));
+page('/catalog', showCatalog);
+page('/catalog/:id', showDetails);
+page('/edit/:id', showEdit);
+page('/create', showCreate);
 page('/search', () => console.log('search'));
-page('/login', () => console.log('login'));
-page('/register', () => console.log('register'));
+page('/login',showLogin);
+page('/register', showRegister);
 
 updateNav();
 page.start();

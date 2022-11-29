@@ -4,7 +4,7 @@ const { expect } = require("chai");
 const host = "http://localhost:3000"; // Application host (NOT service host - that can be anything)
 const interval = 600;
 const DEBUG = false;
-const slowMo = 500;
+const slowMo = 1000;
 
 const mockData = require("./mock-data.json");
 
@@ -446,7 +446,7 @@ describe("E2E tests", function () {
       expect(await page.isVisible('text="Edit"')).to.be.true;
     });
 
-    it("Edit should populate form with correct data [ 2.5 Points ]", async () => {
+    it.only("Edit should populate form with correct data [ 2.5 Points ]", async () => {
       const data = mockData.catalog[0];
       const user = mockData.users[0];
       const { get } = await handle(endpoints.details(data._id));
@@ -469,7 +469,8 @@ describe("E2E tests", function () {
       const inputs = await page.$$eval(".form .edit-form input", (t) =>
         t.map((i) => i.value)
       );
-
+      console.log(inputs[0]);
+      console.log(data.brand);
       expect(inputs[0]).to.contains(data.brand);
       expect(inputs[1]).to.contains(data.model);
       expect(inputs[2]).to.contains(data.imageUrl);

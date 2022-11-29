@@ -18,7 +18,7 @@ const navTemplate = (hasUser) => html`
      <!-- Logged-in users -->
   <div class="user">
     <a href="/create">Add Pair</a>
-    <a @submit=${onLogout} href="javascript:void(0)">Logout</a>
+    <a @click=${onLogout} href="javascript:void(0)">Logout</a>
   </div>
     `: html`
     <!-- Guest users -->
