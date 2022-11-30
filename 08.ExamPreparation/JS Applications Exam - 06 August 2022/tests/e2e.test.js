@@ -616,7 +616,7 @@ describe("E2E tests", function () {
     });
   });
 
-  describe("BONUS : Apply functionality  [ 15 Points ]", async () => {
+  describe.only("BONUS : Apply functionality  [ 15 Points ]", async () => {
     it("Apply button is NOT visible for guest users [ 2.5 Points ]", async () => {
       await page.goto(host);
       await page.waitForTimeout(interval);
